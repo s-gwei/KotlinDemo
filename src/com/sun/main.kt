@@ -1,4 +1,5 @@
 package com.sun
 
-class main {
+fun main(){
+    println("hello sungw")
 }
