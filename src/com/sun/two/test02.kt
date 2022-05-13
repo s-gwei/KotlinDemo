@@ -11,8 +11,13 @@ fun main(){
 
 //    questionMarkPrint("1")
 
-    questionMarkColon()
+//    questionMarkColon()
+//    questionMarkPrint1()
+//    questionMarkColon1()
+    gantanhao()
 }
+
+
 //kotlin中的参数，返回值，不能定义为空,?表示可以为空或null
 fun questionMark(str:String?):String?{
     var a:String? =null
@@ -42,9 +47,33 @@ fun questionMarkPrint(str:String):String?{
     return null
 }
 
+//list?. 当list不为null往下执行，let是返回最后一行，而不是返回当前值
+fun questionMarkPrint1(){
+    var list : MutableList<String> = mutableListOf()
+    list.add("1")
+    list.add("2")
+    var i = list?.let {
+        "3"
+    }
+    println(i)
+}
+
 //?: 三元运算符 如果 ?: 左侧表达式为空，则返回右侧表达式，否则返回左侧表达式。 请注意，当且仅当左侧为空时，才会对右侧表达式求值。
 fun questionMarkColon(){
     var b: String? =null
     var l =b?.length ?: 1
     println(l)
+}
+
+fun questionMarkColon1(){
+    var str : String?= null
+    var i = str?: "111"
+    println(i)
+}
+
+//这会返回一个非空的 b 值 或者如果 b 为空，就会抛出一个 NPE（空指针） 异常
+fun gantanhao(){
+    var a: String?= null
+    var str = a!!.length
+    println(str)
 }
